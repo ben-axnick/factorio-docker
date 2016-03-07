@@ -15,3 +15,4 @@ WORKDIR /opt/factorio
 ADD run.sh ./
 ENTRYPOINT ["bash", "run.sh"]
 CMD ["--help"]
+EXPOSE 34197:34197/tcp 34197:34197/udp

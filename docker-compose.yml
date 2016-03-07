@@ -1,5 +1,8 @@
 factorio:
   build: "."
-  command: "--start-server default"
+  command: "--latency-ms 250 --start-server default"
   volumes:
     - "${PWD}/saves:/opt/factorio/saves"
+  ports:
+    - "34197:34197/tcp"
+    - "34197:34197/udp"
