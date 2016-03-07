@@ -1,0 +1,5 @@
+factorio:
+  build: "."
+  command: "--start-server default"
+  volumes:
+    - "${PWD}/saves:/opt/factorio/saves"
