@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 RUN apt-get update && apt-get install -y curl
-ENV FACTORIO_VERSION=0.12.26
+ENV FACTORIO_VERSION=0.12.29
 RUN \
   curl -kL \
   "https://www.factorio.com/get-download/${FACTORIO_VERSION}/headless/linux64" \
