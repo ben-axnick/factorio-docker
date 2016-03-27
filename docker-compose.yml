@@ -8,3 +8,10 @@ services:
     ports:
       - "34197:34197/tcp"
       - "34197:34197/udp"
+
+volumes:
+  s3:
+    driver: s3
+    driver_opts:
+      region: us-east-1
+      bucket: factorio.pickaxe.me
