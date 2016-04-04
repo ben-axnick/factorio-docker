@@ -1,7 +1,7 @@
 version: "2"
 services:
   factorio:
-    build: "."
+    build: "game"
     command: "--latency-ms 250 --start-server default"
     volumes:
       - "${PWD}/saves:/opt/factorio/saves"
