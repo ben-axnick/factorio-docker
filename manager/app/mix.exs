@@ -14,7 +14,7 @@ defmodule App.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:cowboy, :plug]]
+    [applications: [:cowboy, :plug, :ex_aws, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,7 +27,13 @@ defmodule App.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:cowboy, "~> 1.0.0"},
-     {:plug, "~> 1.0"}]
+    [
+      {:cowboy, "~> 1.0.0"},
+      {:plug, "~> 1.0"},
+      {:arc, "~> 0.5.1"},
+      {:ex_aws, "~> 0.4.10"}, # Required if using Amazon S3
+      {:httpoison, "~> 0.7"},  # Required if using Amazon S3
+      {:poison, "~> 1.2"}     # Required if using Amazon S3
+    ]
   end
 end
