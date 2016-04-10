@@ -9,13 +9,7 @@ services:
     ports:
       - "34197:34197/tcp"
       - "34197:34197/udp"
-  manager:
-    build: "manager"
     environment:
-      AWS_ACCESS_KEY_ID:
-      AWS_SECRET_ACCESS_KEY:
-    ports:
-      - "4000:4000"
 volumes:
   saves:
   mods:
