@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y curl unzip
 ENV FACTORIO_VERSION=0.12.29
 RUN \
   curl -kL \

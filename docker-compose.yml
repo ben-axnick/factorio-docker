@@ -10,6 +10,10 @@ services:
       - "34197:34197/tcp"
       - "34197:34197/udp"
     environment:
+      SAVE_FILE_URL:
+      MODS_FILE_URL:
 volumes:
   saves:
+    driver: local
   mods:
+    driver: local
