@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export SAVE_FILE_URL="https://s3-ap-southeast-2.amazonaws.com/factorio.pickaxe.me/nikben.zip"
+export MODS_FILE_URL="https://s3-ap-southeast-2.amazonaws.com/factorio.pickaxe.me/mods.zip"
+docker-compose up -d
+docker-compose logs
