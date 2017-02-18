@@ -16,7 +16,10 @@ fi
 
 if [ ! -f "/opt/factorio/saves/default.zip" ]; then
   echo "Creating a default Factorio save"
-  /opt/factorio/bin/x64/factorio --create default
+  /opt/factorio/bin/x64/factorio --create default && \
+  mv default.zip saves
 fi
+
+echo "Server is hosted at $(dig +short myip.opendns.com @resolver1.opendns.com)"
 
 exec /opt/factorio/bin/x64/factorio "$@"

@@ -1,8 +1,8 @@
 version: "2"
 services:
   game:
-    build: "game"
-    command: "--latency-ms 250 --start-server default"
+    image: "bentheax/factorio"
+    command: "--start-server-load-latest"
     volumes:
       - "saves:/opt/factorio/saves"
       - "mods:/opt/factorio/mods"

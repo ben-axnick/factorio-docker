@@ -1,18 +1,18 @@
-STACK_NAME ?= "factorio"
+PROJECT = bentheax/factorio
+VERSION = 0.14.22
+IMAGE = $(PROJECT):$(VERSION)
+IMAGE_LATEST = $(PROJECT):latest
 
-roll-stack: stack.json
-	$(MAKE) create-stack || $(MAKE) update-stack
+.PHONY: build
+build:
+	docker build --rm -t $(IMAGE) game
+	docker tag $(IMAGE) $(IMAGE_LATEST)
 
-create-stack:
-	aws cloudformation create-stack \
-		--stack-name $(STACK_NAME) \
-		--template-body file://$${PWD}/stack.json
+.PHONY: push
+push:
+	docker push $(IMAGE)
+	docker push $(IMAGE_LATEST)
 
-update-stack:
-	aws cloudformation update-stack \
-		--stack-name $(STACK_NAME) \
-		--template-body file://$${PWD}/stack.json
-
-stack.json: stack.cfndsl.rb stack.yml
-	bundle exec cfndsl stack.cfndsl.rb -p -y stack.yml > stack.json
-
+.PHONY: run
+run:
+	docker-compose run game
