@@ -1,5 +1,5 @@
 PROJECT = bentheax/factorio
-VERSION = 0.14.22
+VERSION = 0.15.10
 IMAGE = $(PROJECT):$(VERSION)
 IMAGE_LATEST = $(PROJECT):latest
 
